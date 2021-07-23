@@ -1,0 +1,27 @@
+img {
+    width: 150px;
+    height: 150px;
+}
+
+#HeaderDiv {
+    background-color: #74DB84;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid black 2px;
+}
+
+.HeaderLink {
+    color:black;
+    margin-left: 15px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+#HeaderLinkDiv {
+    display: flex;
+    align-items: center;
+}
+
+#HeaderTitle {
+    color: white;
+    font-size: 40px;
+}
