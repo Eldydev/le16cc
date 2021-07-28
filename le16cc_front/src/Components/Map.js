@@ -12,7 +12,12 @@ export default class Map extends Component {
                <MapContainer 
                   center={[this.state.lat, this.state.lng]} 
                   zoom={this.state.zoom} 
-                  style={{ width: '100%', height: '900px'}}
+                  style={{ 
+                    width: '100%', 
+                    height: '1200px',
+                    position: 'fixed',
+                    top: 0,
+                    zIndex: '0'}}
                >
                <TileLayer
                  attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
