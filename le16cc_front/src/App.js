@@ -7,6 +7,17 @@ import Home from './Home.js'
 import NewContactForm from './Components/Login/Signin.js';
 import LoginPopup from './Components/Login/LoginPopup.js';
 
+import AuthService from "./services/auth.service";
+
+import Login from "./components/login.component";
+import Register from "./components/register.component";
+import Profile from "./components/profile.component";
+import BoardUser from "./components/board-user.component";
+import BoardModerator from "./components/board-moderator.component";
+import BoardAdmin from "./components/board-admin.component";
+import NewZone from './Components/NewZone';
+import NewZoneImg from './Components/NewZoneImage';
+
 
 function App() {
 
@@ -16,7 +27,15 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} exact />
           <Route exact path='/Signin' component={NewContactForm} exact />
-          <Route exact path='/login' component={LoginPopup} exact />
+          <Route exact path='/login2' component={LoginPopup} exact />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/profile" component={Profile} />
+          <Route path="/user" component={BoardUser} />
+          <Route path="/mod" component={BoardModerator} />
+          <Route path="/admin" component={BoardAdmin} />
+          <Route path="/NewZone" component={NewZone} />
+          <Route path="/NewZoneImg" component={NewZoneImg} />
         </Switch>
       </BrowserRouter>
     </div>
@@ -24,4 +43,4 @@ function App() {
 }
 
 export default App;
- 
+

@@ -25,10 +25,13 @@ class LoginPopup extends Component {
                     <img id='Pellelogo' src={LogoPelle} alt="LogoPelle" />
                 </div>
                 <div id="SigninButton">
-                    <p>INSCRIVEZ-VOUS GRATUITEMENT !</p>
+
+                    <a href="/register" id="LoginLinkTrue">
+                        <p>INSCRIVEZ-VOUS GRATUITEMENT !</p>
+                    </a>
                 </div>
                 <div id="LoginLink">
-                    <p>Déjà membre ? <a  href="/" id="LoginLinkTrue">Connexion</a></p>
+                    <p>Déjà membre ? <a href="/login" id="LoginLinkTrue">Connexion</a></p>
                 </div>
             </div>
         );

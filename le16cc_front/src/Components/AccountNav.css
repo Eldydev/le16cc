@@ -1,0 +1,34 @@
+nav {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    z-index: 1000;
+    width: 94%;
+    margin-top: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 50px;
+    flex-direction: column;
+    width: 15%;
+}
+
+nav li {
+    color:black;
+    margin-left: 12px;
+    margin-right: 12px;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+nav p a {
+    text-decoration: none;
+    color: black;
+}
+
+#AccNav {
+    display: none;
+    
+}
