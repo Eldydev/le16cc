@@ -17,7 +17,8 @@ import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import NewZone from './Components/NewZone';
 import NewZoneImg from './Components/NewZoneImage';
-
+import PrivateRoute from './Components/PrivateRoutes';
+import PublicRoute from './Components/PublicRoutes';
 
 function App() {
 
@@ -34,8 +35,8 @@ function App() {
           <Route path="/user" component={BoardUser} />
           <Route path="/mod" component={BoardModerator} />
           <Route path="/admin" component={BoardAdmin} />
-          <Route path="/NewZone" component={NewZone} />
-          <Route path="/NewZoneImg" component={NewZoneImg} />
+          <PrivateRoute path="/NewZone" component={NewZone} />
+          <PublicRoute path="/NewZoneImg" component={NewZoneImg} />
         </Switch>
       </BrowserRouter>
     </div>
