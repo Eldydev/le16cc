@@ -77,7 +77,7 @@ class SimpleMap extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/markers')
+    fetch('https://api.le16cc.fr/markers')
         .then(res => res.json())
 
         .catch(error => console.error('Error: ', error))
@@ -156,7 +156,7 @@ MarkersMaping(data){
         lng: lng
       })
     };
-    fetch('http://localhost:8080/v1/new-marker', requestOptions)
+    fetch('https://localhost:8080/v1/new-marker', requestOptions)
       .then(console.log('body: ', requestOptions))
       .then(response => response.json())
       .then(data => {
