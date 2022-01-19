@@ -19,6 +19,7 @@ import NewZone from './Components/NewZone';
 import NewZoneImg from './Components/NewZoneImage';
 import PrivateRoute from './Components/PrivateRoutes';
 import PublicRoute from './Components/PublicRoutes';
+import MapQuartier from './Components/MapQuartier';
 
 function App() {
 
@@ -29,14 +30,15 @@ function App() {
           <Route exact path='/' component={Home} exact />
           <Route exact path='/Signin' component={NewContactForm} exact />
           <Route exact path='/login2' component={LoginPopup} exact />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/connexion" component={Login} />
+          <Route exact path="/inscription" component={Register} />
           <Route exact path="/profile" component={Profile} />
           <Route path="/user" component={BoardUser} />
           <Route path="/mod" component={BoardModerator} />
           <Route path="/admin" component={BoardAdmin} />
           <PrivateRoute path="/NewZone" component={NewZone} />
           <PublicRoute path="/NewZoneImg" component={NewZoneImg} />
+          <PublicRoute path="/MapQuartier" component={MapQuartier}/>
         </Switch>
       </BrowserRouter>
     </div>

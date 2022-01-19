@@ -88,7 +88,7 @@ class SimpleMap extends Component {
             var lat = response.rows[0].latitude
             var lng = response.rows[0].longitude
             console.log(lat, lng)
-            /*this.setState({
+            this.setState({
                 markers: [
                   {
                     title: "",
@@ -96,7 +96,7 @@ class SimpleMap extends Component {
                     position:{ lat, lng}
                   }
                 ]
-            })*/
+            })
             this.MarkersMaping(response.rows)
         });
 }

@@ -5,6 +5,9 @@ import CheckButton from "react-validation/build/button";
 
 import AuthService from "../services/auth.service";
 
+import logo from "../IMG/logo.png"
+import Cross from "../IMG/Cross.png"
+
 const required = value => {
   if (!value) {
     return (
@@ -40,6 +43,11 @@ export default class Login extends Component {
     this.setState({
       password: e.target.value
     });
+  }
+
+  loginDisplay() {
+    document.getElementById('greyscreen').style.display = "none"
+    document.getElementById('Login').style.display = "none"
   }
 
   handleLogin(e) {
@@ -83,11 +91,30 @@ export default class Login extends Component {
     return (
       <div className="col-md-12">
         <div className="card card-container">
+          <div>
           <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
+            onClick={this.loginDisplay}
+            src={Cross}
+            alt=""
+            style={{
+              width:"25px",
+              height:"25px",
+              position:"absolute",
+              left: "92%",
+              top:"13%"
+            }}
           />
+          </div>
+
+          <img
+            src={logo}
+            alt="16cc LOgo Green"
+            style={{
+              width:"150px",
+              height:"150px"
+            }}
+          />
+          <p>Déjà membre de la communauté du 16cc ?</p>
 
           <Form
             onSubmit={this.handleLogin}
@@ -96,7 +123,7 @@ export default class Login extends Component {
             }}
           >
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">Pseudo</label>
               <Input
                 type="text"
                 className="form-control"
@@ -108,7 +135,7 @@ export default class Login extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Mot de passe</label>
               <Input
                 type="password"
                 className="form-control"
@@ -121,13 +148,14 @@ export default class Login extends Component {
 
             <div className="form-group">
               <button
+                id='LoginButton'
                 className="btn btn-primary btn-block"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
-                <span>Login</span>
+                <span>Connexion</span>
               </button>
             </div>
 

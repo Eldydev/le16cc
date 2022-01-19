@@ -27,8 +27,42 @@ class Home extends Component {
         <Header />
         <SimpleMap />
         <NZButton />
+        <div
+          id = "greyscreen"
+          style={{
+            width:'100%',
+            height: '130%',
+            backgroundColor: "grey",
+            position: "absolute",
+            top: '0',
+            zIndex: "1500",
+            opacity: "50%",
+            display:"none"
+          }}>
+        </div>
+        <div
+          id="Login"
+          style={{
+            display:"none",
+            position: "absolute",
+            zIndex: "2000",
+            left: "40%"
+          }}>
+          <Login />
+        </div>
+        <div
+          id="Register"
+          style={{
+            display:"none",
+            position: "absolute",
+            zIndex: "2000",
+            top: '1%',
+            left: "40%"
+          }}>
+          <Register />
+        </div>
       </div>
     );
   }
- }
- export default Home;
+}
+export default Home;

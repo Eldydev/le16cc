@@ -1,0 +1,29 @@
+#RegisterButton {
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 50px;
+    font-size: larger;
+    opacity: 52.3%;
+}
+
+#LoginButton {
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 50px;
+    font-size: larger;
+    opacity: 52.3%;
+}

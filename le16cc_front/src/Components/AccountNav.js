@@ -39,8 +39,17 @@ class AccountNav extends Component {
     AuthService.logout();
   }
 
+  loginDisplay() {
+    document.getElementById('greyscreen').style.display = "block"
+    document.getElementById('Login').style.display = "block"
+  }
+  RegisterDisplay() {
+    document.getElementById('greyscreen').style.display = "block"
+    document.getElementById('Register').style.display = "block"
+  }
+
   NavDisplay() {
-      document.getElementById('AccNav').style.display = 'none'
+    document.getElementById('AccNav').style.display = 'none'
   }
 
   render() {
@@ -51,7 +60,7 @@ class AccountNav extends Component {
         <nav >
           <div >
             <p >
-              <a href="/" >HOME
+              <a href="/" >ACCEUIL
               </a>
             </p>
 
@@ -95,16 +104,20 @@ class AccountNav extends Component {
             </div>
           ) : (
             <div >
-              <p >
-                <a href="/login" >
-                  LOGIN
-                </a>
+              <p
+                style={{
+                  color: "black"
+                }}
+                onClick={this.loginDisplay}>
+                CONNEXION
               </p>
 
-              <p >
-                <a href="/register" >
-                  SIGN UP
-                </a>
+              <p
+                style={{
+                  color: "black"
+                }}
+                onClick={this.RegisterDisplay}>
+                INSCRIPTION
               </p>
             </div>
           )}
