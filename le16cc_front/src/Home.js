@@ -46,7 +46,6 @@ class Home extends Component {
             display:"none",
             position: "absolute",
             zIndex: "2000",
-            left: "40%"
           }}>
           <Login />
         </div>
@@ -56,8 +55,6 @@ class Home extends Component {
             display:"none",
             position: "absolute",
             zIndex: "2000",
-            top: '1%',
-            left: "40%"
           }}>
           <Register />
         </div>

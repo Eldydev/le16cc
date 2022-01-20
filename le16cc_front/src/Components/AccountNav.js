@@ -10,6 +10,8 @@ import BoardModerator from "../components/board-moderator.component";
 import BoardAdmin from "../components/board-admin.component";
 import AuthService from "../services/auth.service";
 
+import Cross from "../IMG/Cross.png"
+
 
 class AccountNav extends Component {
   constructor(props) {
@@ -57,6 +59,22 @@ class AccountNav extends Component {
     const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
     return (
       <div id="AccNav" onMouseLeave={(e) => this.NavDisplay()}>
+        <div>
+          <img
+            id="navcross"
+            onClick={this.NavDisplay}
+            src={Cross}
+            alt=""
+            style={{
+              width: "25px",
+              height: "25px",
+              position: "absolute",
+              left: "88%",
+              top: "3%",
+              zIndex: "1600"
+            }}
+          />
+        </div>
         <nav >
           <div >
             <p >
@@ -97,7 +115,7 @@ class AccountNav extends Component {
                 </a>
               </p>
               <p >
-                <a href="/login" onClick={this.logOut}>
+                <a href="/connexion" onClick={this.logOut}>
                   LogOut
                 </a>
               </p>
@@ -120,7 +138,32 @@ class AccountNav extends Component {
                 INSCRIPTION
               </p>
             </div>
+
           )}
+          <div id="InfoDiv">
+            <p
+              style={{
+                color: "black"
+              }}
+            >
+              QUI SOMMES NOUS ?
+            </p>
+
+            <p
+              style={{
+                color: "black"
+              }}
+            >
+              COMMENT DECLARER ?
+            </p>
+            <p
+              style={{
+                color: "black"
+              }}
+            >
+              COMMENT AGIR ?
+            </p>
+          </div>
         </nav>
       </div>
     );

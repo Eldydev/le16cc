@@ -77,7 +77,7 @@ class SimpleMap extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.le16cc.fr/markers')
+    fetch('https://api.le16-cc.fr/markers')
         .then(res => res.json())
 
         .catch(error => console.error('Error: ', error))

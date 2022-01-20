@@ -63,7 +63,6 @@ export default class Login extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          this.props.history.push("/profile");
           window.location.reload();
         },
         error => {
@@ -90,29 +89,27 @@ export default class Login extends Component {
   render() {
     return (
       <div className="col-md-12">
-        <div className="card card-container">
+        <div
+          id="LoginCard"
+          className="card card-container">
           <div>
-          <img
-            onClick={this.loginDisplay}
-            src={Cross}
-            alt=""
-            style={{
-              width:"25px",
-              height:"25px",
-              position:"absolute",
-              left: "92%",
-              top:"13%"
-            }}
-          />
+            <img
+              id="LoginCross"
+              onClick={this.loginDisplay}
+              src={Cross}
+              alt=""
+              style={{
+                width: "25px",
+                height: "25px",
+                position: "absolute",
+              }}
+            />
           </div>
 
           <img
+            id="LogoLogin"
             src={logo}
             alt="16cc LOgo Green"
-            style={{
-              width:"150px",
-              height:"150px"
-            }}
           />
           <p>Déjà membre de la communauté du 16cc ?</p>
 

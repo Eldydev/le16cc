@@ -180,7 +180,7 @@ class NewZone extends Component {
                 lng: this.state.lng
             })
         };
-        fetch('https://api.le16cc.fr/v1/new-marker', requestOptions)
+        fetch('https://api.le16-cc.fr/v1/new-marker', requestOptions)
             .then(console.log('body: ', requestOptions))
             .then(response => response.json())
             .then(data => {

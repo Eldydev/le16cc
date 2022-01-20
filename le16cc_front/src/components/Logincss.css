@@ -10,7 +10,6 @@
     margin-right: 3%;
     border-radius: 50px;
     font-size: larger;
-    opacity: 52.3%;
 }
 
 #LoginButton {
@@ -25,5 +24,77 @@
     margin-right: 3%;
     border-radius: 50px;
     font-size: larger;
-    opacity: 52.3%;
+}
+
+#Login {
+    left: 40%;
+}
+
+#Register {
+    left: 40%;
+}
+
+#LogoLogin {
+    height: 150px;
+    width: 150px;
+}
+
+#RegisterLogo {
+    height: 150px;
+    width: 150px;
+}
+
+#LoginCross {
+    left: 92%;
+    top: 13%;
+}
+
+#RegisterCross {
+    left: 92%;
+    top: 13%;
+}
+
+@media all and (min-width: 300px) and (max-width: 599px) {
+
+    #LoginCard {
+        height: 130vh;
+        margin-top: 0;
+    }
+    #Login {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+    }
+    #LogoLogin  {
+        height: 200px;
+        width: 200px;
+    }
+    #LoginCross {
+        left: 92%;
+        top: 1%;
+    }
+
+    #RegisterCard {
+        height: 130vh;
+        margin-top: 0;
+    }
+    #Register {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+    }
+    #RegisterLogo  {
+        height: 200px;
+        width: 200px;
+    }
+    #RegisterCross {
+        left: 92%;
+        top: 1%;
+    }
 }
