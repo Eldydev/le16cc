@@ -5,6 +5,7 @@ import SimpleMap from './Components/GMap'
 import Header from './Components/Header'
 import NZButton from './Components/NewZoneButton';
 import Login from "./components/login.component";
+import LoginPopup from './Components/Login/LoginPopup';
 import Register from "./components/register.component";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
@@ -41,6 +42,19 @@ class Home extends Component {
           }}>
         </div>
         <div
+          id = "greyscreen2"
+          style={{
+            width:'100%',
+            height: '130%',
+            backgroundColor: "grey",
+            position: "absolute",
+            top: '0',
+            zIndex: "1300",
+            opacity: "50%",
+            display:"none"
+          }}>
+        </div>
+        <div
           id="Login"
           style={{
             display:"none",
@@ -57,6 +71,15 @@ class Home extends Component {
             zIndex: "2000",
           }}>
           <Register />
+        </div>
+        <div
+          id="LoginPopup"
+          style={{
+            display:"none",
+            position: "absolute",
+            zIndex: "1400",
+          }}>
+          <LoginPopup />
         </div>
       </div>
     );

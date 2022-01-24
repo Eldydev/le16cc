@@ -2,55 +2,77 @@
     display: flex;
     width: 80%;
     margin-left: 10%;
-    border: solid 2px blue;
-    height: 800px;
     justify-content: space-around;
-    flex-wrap: wrap;
 }
 
 #mapbox {
-    border: solid 2px red;
     height: 80%;
     width: 45%;
     margin-top: 30px;
 }
 
 #Coordbox {
-    border: solid 2px orange;
     height: 80%;
     width: 45%;
     margin-top: 30px;
-    padding: 20px;
 }
 
 
 .streetbox {
-    border: solid 2px yellow;
     display: flex;
     justify-content: left;
 }
 
 .gpsbox {
     margin-top: 30px;
-    border: solid 2px yellow;
     display: flex;
     text-align: left;
     justify-content: space-evenly;
 }
 
 .streetbox div {
-    border: solid 2px red;
     text-align: left;
 }
 
 input {
     height: 30px;
     width: 100%;
-    border: solid 2px grey;
     border-radius: 25px;
 }
 
 #geolocbutton:hover{
     color: green;
+}
+
+#numberstreetbox {
+    width: 120px;
+}
+
+@media all and (min-width: 300px) and (max-width: 599px) {
+
+    #Newzone {
+        display: flex;
+        width: 90%;
+        margin-left: 5%;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    #mapbox {
+        height: 80%;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    #Coordbox {
+        height: 80%;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    #numberstreetbox {
+        width: 205px;
+    }
+    
 }
 

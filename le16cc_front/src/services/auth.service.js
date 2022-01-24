@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://api.le16-cc.fr/api/auth/";
+const API_URL = "https://api.le16cc.fr/api/auth/";
 
 class AuthService {
   login(username, password) {
@@ -22,11 +22,12 @@ class AuthService {
     localStorage.removeItem("user");
   }
 
-  register(username, email, password) {
+  register(username, email, password, quartier) {
     return axios.post(API_URL + "signup", {
       username,
       email,
-      password
+      password,
+      quartier
     });
   }
 

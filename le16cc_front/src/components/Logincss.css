@@ -10,6 +10,7 @@
     margin-right: 3%;
     border-radius: 50px;
     font-size: larger;
+    opacity: 100%;
 }
 
 #LoginButton {
@@ -24,6 +25,7 @@
     margin-right: 3%;
     border-radius: 50px;
     font-size: larger;
+    opacity: 100%;
 }
 
 #Login {
@@ -52,6 +54,29 @@
 #RegisterCross {
     left: 92%;
     top: 13%;
+}
+
+#LogoProfile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.PageTitle {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 200px;
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    border-radius: 20px;
+    padding: 15px;
+    color: black;
+}
+
+#ProfileContainer {
+    margin-top: 100px;
 }
 
 @media all and (min-width: 300px) and (max-width: 599px) {
@@ -96,5 +121,11 @@
     #RegisterCross {
         left: 92%;
         top: 1%;
+    }
+    #ProfileContainer {
+        margin-top: 180px;
+    }
+    .PageTitle {
+        top: 8%;
     }
 }

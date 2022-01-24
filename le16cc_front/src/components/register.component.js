@@ -58,13 +58,14 @@ export default class Register extends Component {
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
+    this.onChangeQuartier = this.onChangeQuartier.bind(this);
     this.DisplayMap = this.DisplayMap.bind(this);
 
     this.state = {
       username: "",
       email: "",
       password: "",
-      quartier: "",
+      quartier: "Auteuil-Nord",
       successful: false,
       message: "",
       displaymap: false
@@ -127,7 +128,8 @@ export default class Register extends Component {
       AuthService.register(
         this.state.username,
         this.state.email,
-        this.state.password
+        this.state.password,
+        this.state.quartier
       ).then(
         response => {
           this.setState({

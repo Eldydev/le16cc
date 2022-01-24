@@ -12,7 +12,6 @@ img {
 #LogoZone {
     display: flex;
     justify-content: center;
-    border: 2px solid blue;
     align-items: center;
 }
 
@@ -48,6 +47,7 @@ img {
     border: solid 2px black;
     border-radius: 15px;
     margin-left: 30%;
+    background-color: aliceblue;
 }
 
 #LoginLink {
@@ -57,4 +57,14 @@ img {
 #LoginLinkTrue {
     color: skyblue;
     text-decoration: none;
+}
+
+#LoginPopup {
+    margin-left: 18%;
+}
+
+#LoginPopupCross {
+    left: 125%;
+    top: 1%;
+    cursor: pointer;
 }

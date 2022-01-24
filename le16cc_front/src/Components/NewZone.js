@@ -58,38 +58,38 @@ class NewZone extends Component {
     GeolocAdress(name, value) {
 
         console.log("adress update ", name, " ", value)
-        if(name === "nrue") {
+        if (name === "nrue") {
             var nrue = value
         }
         else {
             var nrue = this.state.nrue
         }
-        if(name === "rue") {
+        if (name === "rue") {
             var rue = value
         }
         else {
             var rue = this.state.rue
         }
-        if(name === "ville") {
+        if (name === "ville") {
             var ville = value
         }
         else {
             var ville = this.state.ville
         }
-        if(name === "cp") {
+        if (name === "cp") {
             var cp = value
         }
         else {
             var cp = this.state.cp
         }
-        console.log("adresse ", nrue, rue, ville, cp )
+        console.log("adresse ", nrue, rue, ville, cp)
 
 
 
         Geocode.setApiKey("AIzaSyD7ZmbMrmVkR19h8d5MfZQseosUypXDTZw");
         Geocode.setLocationType("ROOFTOP");
         Geocode.enableDebug();
-        Geocode.fromAddress("'" + nrue + " " + rue + " " + cp + " " + ville + "'" ).then(
+        Geocode.fromAddress("'" + nrue + " " + rue + " " + cp + " " + ville + "'").then(
             (response) => {
                 console.log('response', response.results[0].geometry.location);
                 this.setState({
@@ -180,7 +180,7 @@ class NewZone extends Component {
                 lng: this.state.lng
             })
         };
-        fetch('https://api.le16-cc.fr/v1/new-marker', requestOptions)
+        fetch('https://api.le16cc.fr/v1/new-marker', requestOptions)
             .then(console.log('body: ', requestOptions))
             .then(response => response.json())
             .then(data => {
@@ -197,26 +197,25 @@ class NewZone extends Component {
         console.log(this.state.markers.position.lat)
         return (
             <div>
-                <p>NEWZONE PAGE</p>
+                <p>J'AJOUTE UNE ZONE A NETTOYER</p>
 
                 <div id="Newzone">
-                    <div style={{
-                        width: "100%"
-                    }}>
-                        <p id="geolocbutton" onClick={(e) => this.Geoloc()} style={{
-                            width: "100%",
-                            marginTop: "30px",
-                            height: "30px",
-                            borderRadius: "25px",
-                            backgroundColor: "white",
-                            border: "solid 2px gold",
-                            textAlign: "center",
-                            paddingTop: "10px"
-                        }}
-                        >Utiliser ma localisation actuelle</p>
-                    </div>
                     <div id="mapbox">
-                        <div style={{ height: '400px', width: '100%', position: "relative", border: "solid 2px grey" }}>
+                        <p id="geolocbutton" onClick={(e) => this.Geoloc()}
+                            style={{
+                                width: "80%",
+                                marginTop: "30px",
+                                marginLeft: "10%",
+                                height: "30px",
+                                borderRadius: "25px",
+                                backgroundColor: "white",
+                                textAlign: "center",
+                                paddingTop: "10px",
+                                backgroundImage: "linear-gradient(to top, rgba(116,219,132,0.3), #74DB84)",
+                                color: "black"
+                            }}
+                        >Utiliser ma localisation actuelle</p>
+                        <div style={{ height: '400px', width: '100%', position: "relative" }}>
                             <Map
                                 google={this.props.google}
                                 center={{
@@ -257,10 +256,24 @@ class NewZone extends Component {
                         </div>
                     </div>
                     <div id="Coordbox">
+                        <p id="geolocbutton"
+                            style={{
+                                width: "80%",
+                                marginTop: "30px",
+                                marginRight: "10%",
+                                marginLeft: '10%',
+                                height: "30px",
+                                borderRadius: "25px",
+                                backgroundColor: "white",
+                                textAlign: "center",
+                                paddingTop: "10px",
+                                backgroundImage: "linear-gradient(to top, rgba(116,219,132,0.3), #74DB84)",
+                                color: "black"
+                            }}
+                        >Je renseigne l'adresse</p>
                         <div id="inputbox">
                             <div className="streetbox">
-                                <div style={{
-                                    width: "120px",
+                                <div id="numberstreetbox" style={{
                                     marginRight: "40px"
                                 }}>
                                     <p>N° de la rue</p>
