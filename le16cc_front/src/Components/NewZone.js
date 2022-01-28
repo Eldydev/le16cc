@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper, MapProps } from 'google-maps-react';
+import { useLocation, Link } from "react-router-dom";
 import { geolocated } from "react-geolocated";
 import Geocode from "react-geocode";
 import NZmap from './NZmap';
 import NZinput from './Nzinput';
 import "./NewZone.css"
+
+import ProgressBar from "./progressbar";
+
+const testData = [
+    { bgcolor: "#6a1b9a", completed: 0, step: 1 },
+];
 
 class NewZone extends Component {
     constructor(props) {
@@ -171,25 +178,25 @@ class NewZone extends Component {
         );
     };
 
-    NewMarker() {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                lat: this.state.lat,
-                lng: this.state.lng
-            })
-        };
-        fetch('https://api.le16cc.fr/v1/new-marker', requestOptions)
-            .then(console.log('body: ', requestOptions))
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                if (data.result == 'success') {
-                    console.log('New marker added')
-                }
-            })
-    }
+    /* NewMarker() {
+         const requestOptions = {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({
+                 lat: this.state.lat,
+                 lng: this.state.lng
+             })
+         };
+         fetch('https://api.le16cc.fr/v1/new-marker', requestOptions)
+             .then(console.log('body: ', requestOptions))
+             .then(response => response.json())
+             .then(data => {
+                 console.log(data)
+                 if (data.result == 'success') {
+                     console.log('New marker added')
+                 }
+             })
+     }*/
 
 
     render() {
@@ -198,6 +205,15 @@ class NewZone extends Component {
         return (
             <div>
                 <p>J'AJOUTE UNE ZONE A NETTOYER</p>
+                <div style={{
+                    width: "40%",
+                    marginLeft: "30%"
+                }}>
+                    {testData.map((item, idx) => (
+                        <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} step={item.step} />
+                    ))}
+                </div>
+
 
                 <div id="Newzone">
                     <div id="mapbox">
@@ -315,7 +331,18 @@ class NewZone extends Component {
                                     name="cp"
                                 />
                             </div>
-                            <input type="button" value="New marker" onClick={(e) => this.NewMarker()} />
+                            <Link
+                                to={{
+                                    pathname: '/NewZoneImg',
+                                    state: {
+                                        lat: this.state.lat,
+                                        lng: this.state.lng
+                                    }
+                                }}
+                            >
+                                <button>Next</button>
+                            </Link>
+
                         </div>
                     </div>
                 </div>
@@ -327,3 +354,7 @@ class NewZone extends Component {
 export default GoogleApiWrapper({
     apiKey: ("AIzaSyD7ZmbMrmVkR19h8d5MfZQseosUypXDTZw")
 })(NewZone);
+
+/*<input type="button" value="New marker" onClick={(e) => this.NewMarker()}
+
+/>*/

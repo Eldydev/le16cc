@@ -20,6 +20,9 @@ import NewZoneImg from './Components/NewZoneImage';
 import PrivateRoute from './Components/PrivateRoutes';
 import PublicRoute from './Components/PublicRoutes';
 import MapQuartier from './Components/MapQuartier';
+import NewZoneConfirm from './Components/ZoneConfirm';
+import ZoneConfirmPopup from './Components/ZoneConfirmPopup';
+import ZoneDetails from './Components/ZoneDetails';
 
 function App() {
 
@@ -38,7 +41,10 @@ function App() {
           <Route path="/admin" component={BoardAdmin} />
           <PrivateRoute path="/NewZone" component={NewZone} />
           <PublicRoute path="/NewZoneImg" component={NewZoneImg} />
+          <Route path='/NewZoneConfirm' component={NewZoneConfirm}/>
           <PublicRoute path="/MapQuartier" component={MapQuartier}/>
+          <Route exact path='/ZCP' component={ZoneConfirmPopup} exact />
+          <Route exact path='/Zonedetail' component={ZoneDetails} exact />
         </Switch>
       </BrowserRouter>
     </div>
