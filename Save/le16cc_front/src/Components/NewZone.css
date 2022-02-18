@@ -1,0 +1,78 @@
+#Newzone {
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    justify-content: space-around;
+}
+
+#mapbox {
+    height: 80%;
+    width: 45%;
+    margin-top: 30px;
+}
+
+#Coordbox {
+    height: 80%;
+    width: 45%;
+    margin-top: 30px;
+}
+
+
+.streetbox {
+    display: flex;
+    justify-content: left;
+}
+
+.gpsbox {
+    margin-top: 30px;
+    display: flex;
+    text-align: left;
+    justify-content: space-evenly;
+}
+
+.streetbox div {
+    text-align: left;
+}
+
+input {
+    height: 30px;
+    width: 100%;
+    border-radius: 25px;
+}
+
+#geolocbutton:hover{
+    color: green;
+}
+
+#numberstreetbox {
+    width: 120px;
+}
+
+@media all and (min-width: 300px) and (max-width: 599px) {
+
+    #Newzone {
+        display: flex;
+        width: 90%;
+        margin-left: 5%;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    #mapbox {
+        height: 80%;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    #Coordbox {
+        height: 80%;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    #numberstreetbox {
+        width: 205px;
+    }
+    
+}
+

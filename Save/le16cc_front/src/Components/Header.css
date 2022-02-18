@@ -1,0 +1,144 @@
+#logo {
+    width: 75px;
+    height: 75px;
+    margin-top: 10px;
+    margin-right: 15px;
+    /*border: solid 2px red;*/
+}
+
+#Alogo {
+    width: 30px;
+    height: 30px;
+    border: solid 1px white;
+    border-radius: 30px;
+    background-color: white;
+}
+
+#Mlogo {
+    width: 30px;
+    height: 30px;
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+#HeaderDiv {
+    /*background-color: #74DB84;*/
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 94%;
+    margin-top: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 50px;
+}
+
+.HeaderLink {
+    color:black;
+    margin-left: 12px;
+    margin-right: 12px;
+    vertical-align: middle;
+   /* border: solid 2px blue;*/
+}
+#HeaderLinkDiv {
+    display: flex;
+    align-items: center;
+   /* border: solid 2px black;*/
+    margin-right: 5%;
+}
+
+
+#HeaderMDiv {
+    align-items: center;
+   /* border: solid 2px black;*/
+    margin-right: 5%;
+    display: none;
+}
+
+
+#HeaderTitle {
+    color: white;
+    font-size: 200%;
+   /* border: solid 2px yellow;*/
+}
+
+#LogoDiv {
+    /*border: solid 2px orange;*/
+    display: flex;
+    margin-right: 15%;
+    margin-left: 5%;
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1570px) {
+
+    #HeaderDiv {
+        justify-content: space-between;   
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+    #HeaderTitle {
+        font-size: 25px;
+    }
+    #LogoDiv {
+        margin-right: 1%;
+    }
+  }
+
+  @media screen and (min-width: 1025px) and (max-width: 1280px) {
+
+    #HeaderDiv {
+        justify-content: space-between;    
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+    #LogoDiv {
+        margin-right: 1%;
+    }
+    .HeaderLink {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 15px;
+    }
+    #HeaderTitle {
+        font-size: 22px;
+    }
+    #logo {
+        margin-top: 0px;
+    }
+  }
+
+@media screen and (max-width: 1024px) {
+    #HeaderLinkDiv {
+        display: none;
+    }
+    #HeaderDiv {
+        justify-content: space-between;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+    #HeaderMDiv {
+        display: flex;
+    }
+
+  }
+
+  @media screen and (max-width: 414px) {
+    #HeaderTitle {
+        display: none;
+    }
+    #logo {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #HeaderDiv {  
+        margin-left: 15%;
+        margin-right: 15%;
+        width: 70%;
+    }
+  }

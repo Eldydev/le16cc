@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.19cb603c.chunk.css",
+    "main.js": "/static/js/main.27f889cd.chunk.js",
+    "main.js.map": "/static/js/main.27f889cd.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8ce59f97.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8ce59f97.js.map",
+    "static/js/2.15aee312.chunk.js": "/static/js/2.15aee312.chunk.js",
+    "static/js/2.15aee312.chunk.js.map": "/static/js/2.15aee312.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.19cb603c.chunk.css.map": "/static/css/main.19cb603c.chunk.css.map",
+    "static/js/2.15aee312.chunk.js.LICENSE.txt": "/static/js/2.15aee312.chunk.js.LICENSE.txt",
+    "static/media/AccountLogo.e1d0e9f6.png": "/static/media/AccountLogo.e1d0e9f6.png",
+    "static/media/Cross.8d0b2a60.png": "/static/media/Cross.8d0b2a60.png",
+    "static/media/LogoGlove2.0702ca20.png": "/static/media/LogoGlove2.0702ca20.png",
+    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg",
+    "static/media/logo.ebba1012.png": "/static/media/logo.ebba1012.png",
+    "static/media/logo_Wnoback2.1aa99b5f.png": "/static/media/logo_Wnoback2.1aa99b5f.png",
+    "static/media/plan16e.b5034c79.png": "/static/media/plan16e.b5034c79.png",
+    "static/media/plan16e2.bfd52db4.png": "/static/media/plan16e2.bfd52db4.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ce59f97.js",
+    "static/js/2.15aee312.chunk.js",
+    "static/css/main.19cb603c.chunk.css",
+    "static/js/main.27f889cd.chunk.js"
+  ]
+}

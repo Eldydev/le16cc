@@ -1,0 +1,70 @@
+img {
+    width: 212px;
+    height: 195px;
+}
+
+#Glovelogo {
+    width: 233px;
+    height: 228px;
+
+}
+
+#LogoZone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#SigninButton {
+    margin-left: 25%;
+    margin-top: 35px;
+    width: 400px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: lightgreen;
+    border-radius: 15px;
+}
+
+#SigninButton p {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+#title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#titledesc {
+    font-size: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+#loginpopupbox {
+    width: 750px;
+    border: solid 2px black;
+    border-radius: 15px;
+    margin-left: 30%;
+    background-color: aliceblue;
+}
+
+#LoginLink {
+    font-size: 25px;
+}
+
+#LoginLinkTrue {
+    color: skyblue;
+    text-decoration: none;
+}
+
+#LoginPopup {
+    margin-left: 18%;
+}
+
+#LoginPopupCross {
+    left: 125%;
+    top: 1%;
+    cursor: pointer;
+}

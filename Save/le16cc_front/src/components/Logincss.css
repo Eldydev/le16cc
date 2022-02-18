@@ -1,0 +1,129 @@
+#RegisterButton {
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 50px;
+    font-size: larger;
+}
+
+#LoginButton {
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 50px;
+    font-size: larger;
+}
+
+#Login {
+    left: 40%;
+}
+
+#Register {
+    left: 40%;
+}
+
+#LogoLogin {
+    height: 150px;
+    width: 150px;
+}
+
+#RegisterLogo {
+    height: 150px;
+    width: 150px;
+}
+
+#LoginCross {
+    left: 92%;
+    top: 13%;
+}
+
+#RegisterCross {
+    left: 92%;
+    top: 13%;
+}
+
+#LogoProfile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+}
+
+.PageTitle {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 200px;
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    border-radius: 20px;
+    padding: 15px;
+    color: black;
+}
+
+#ProfileContainer {
+    margin-top: 100px;
+}
+
+@media all and (min-width: 300px) and (max-width: 599px) {
+
+    #LoginCard {
+        height: 130vh;
+        margin-top: 0;
+    }
+    #Login {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+    }
+    #LogoLogin  {
+        height: 200px;
+        width: 200px;
+    }
+    #LoginCross {
+        left: 92%;
+        top: 1%;
+    }
+
+    #RegisterCard {
+        height: 130vh;
+        margin-top: 0;
+    }
+    #Register {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+    }
+    #RegisterLogo  {
+        height: 200px;
+        width: 200px;
+    }
+    #RegisterCross {
+        left: 92%;
+        top: 1%;
+    }
+    #ProfileContainer {
+        margin-top: 180px;
+    }
+    .PageTitle {
+        top: 8%;
+    }
+}

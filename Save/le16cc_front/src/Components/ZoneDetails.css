@@ -1,0 +1,42 @@
+#Zonedetails {
+    border: solid 2px blue;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.ZoneDetailsLabel {
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    width: 50%;
+    border-radius: 50px;
+    font-size: larger;
+    color: black;
+    margin-left: 25%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.ZoneDetailsInput{
+    width: 10%;
+}
+
+.ZoneDetailsLabelInput {
+    width: 25px;
+    height: 15px;
+}
+
+.Trashillus {
+    width: 20%;
+}
+
+.Trashillus:hover {
+    border: solid 2px yellow;
+    padding-left: 10px;
+}
+
+.selected {
+    border: 2px solid green;
+}
+
+.selected:hover {
+    border: 2px solid green;
+}
