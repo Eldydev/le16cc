@@ -15,6 +15,8 @@ class NewZoneImg extends Component {
         super(props)
         this.state = {
             file: [null],
+            filetest:[],
+            filenametest: "",
             lat: this.props.location.state.lat,
             lng: this.props.location.state.lng,
             completed: 0,
@@ -42,11 +44,14 @@ class NewZoneImg extends Component {
     }
 
     uploadMultipleFiles(e) {
+        console.log(e.target.files)
         this.fileObj.push(e.target.files)
         for (let i = 0; i < this.fileObj[0].length; i++) {
             this.fileArray.push(URL.createObjectURL(this.fileObj[0][i]))
         }
         this.setState({ file: this.fileArray })
+        this.setState({filetest: e.target.files[0]})
+        this.setState({filenametest: e.target.files[0].name})
     }
 
     uploadFiles(e) {
@@ -64,6 +69,7 @@ class NewZoneImg extends Component {
     };
 
     render() {
+        console.log(this.state.fileArray)
         console.log(' mount', this.state.mount)
         console.log("ccords : ", this.props)
         console.log('lat: ', this.state.lat, ' / lng: ', this.state.lng)
@@ -94,7 +100,9 @@ class NewZoneImg extends Component {
                             state: {
                                 lat: this.state.lat,
                                 lng: this.state.lng,
-                                file: this.state.file
+                                file: this.state.file,
+                                filetest: this.state.filetest,
+                                filenametest: this.state.filenametest
                             }
                         }}
                     >

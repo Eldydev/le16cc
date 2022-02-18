@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
 import SimpleMap from './Components/GMap'
 import Header from './Components/Header'
 import NZButton from './Components/NewZoneButton';
+import NTButton from './Components/NewTrashButton';
 import Login from "./components/login.component";
 import LoginPopup from './Components/Login/LoginPopup';
 import Register from "./components/register.component";
@@ -28,6 +29,7 @@ class Home extends Component {
         <Header />
         <SimpleMap />
         <NZButton />
+        <NTButton />
         <div
           id = "greyscreen"
           style={{

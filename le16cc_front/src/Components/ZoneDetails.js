@@ -12,8 +12,19 @@ class ZoneDetails extends Component {
             file: this.props.location.state.file,
             lat: this.props.location.state.lat,
             lng: this.props.location.state.lng,
+            filetest: this.props.location.state.filetest,
+            filenametest: this.props.location.state.filenametest,
             completed: 25,
+            difficulty: "",
+            size: "",
+            type1: "",
+            type2: "",
+            type3: "",
+            glove: "",
+            bag: ""
         }
+
+        this.handleInputChange = this.handleInputChange.bind(this)
     }
 
     componentDidMount() {
@@ -27,7 +38,28 @@ class ZoneDetails extends Component {
         }, 200);
     }
 
+    test() {
+        console.log('test function ')
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        console.log("value ", value, " name : ", name, " target : ", target)
+        this.setState({
+            [name]: value
+        });
+    }
+
     render() {
+        console.log('difficulty :', this.state.difficulty)
+        console.log('size :', this.state.size)
+        console.log('type1 :', this.state.type1)
+        console.log('type2 :', this.state.type2)
+        console.log('type3 :', this.state.type3)
+        console.log('glove :', this.state.glove)
+        console.log('bag :', this.state.bag)
         return (
             <div>
                 <p>NEW ZONE DETAILS </p>
@@ -46,32 +78,108 @@ class ZoneDetails extends Component {
                             marginLeft: "15%",
                             justifyContent: "space-evenly"
 
-                        }}>
+                        }}
+                            onChange={this.handleInputChange}
+                        >
                             <label>
-                                <input className='ZoneDetailsLabelInput' type="radio" value="option1" checked={true} />1
+                                <input className='ZoneDetailsLabelInput' type="radio" name="difficulty" value="1" />1
                             </label>
                             <label>
-                                <input className='ZoneDetailsLabelInput' type="radio" value="option1" />2
+                                <input className='ZoneDetailsLabelInput' type="radio" name="difficulty" value="2" />2
                             </label>
                             <label>
-                                <input className='ZoneDetailsLabelInput' type="radio" value="option1" />3
+                                <input className='ZoneDetailsLabelInput' type="radio" name="difficulty" value="3" />3
                             </label>
                             <label>
-                                <input className='ZoneDetailsLabelInput' type="radio" value="option1" />4
+                                <input className='ZoneDetailsLabelInput' type="radio" name="difficulty" value="4" />4
                             </label>
                             <label>
-                                <input className='ZoneDetailsLabelInput' type="radio" value="option1" />5
+                                <input className='ZoneDetailsLabelInput' type="radio" name="difficulty" value="5" />5
                             </label>
                         </div>
 
                     </div>
                     <div>
-                        <p className='ZoneDetailsLabel'>Taille des dechets</p>
-                        <input className='ZoneDetailsInput' type="text" value="0" name="gender" />
+                        <p className='ZoneDetailsLabel'>Taille des déchets</p>
+                        <div style={{
+                            display: "flex",
+                            width: "70%",
+                            marginLeft: "15%",
+                            justifyContent: "space-evenly"
+
+                        }}
+                            onChange={this.handleInputChange}
+                        >
+                            <label>
+                                <input className='ZoneDetailsLabelInput' type="radio" name="size" value="petits" />petits
+                            </label>
+                            <label>
+                                <input className='ZoneDetailsLabelInput' type="radio" name="size" value="moyens" />moyens
+                            </label>
+                            <label>
+                                <input className='ZoneDetailsLabelInput' type="radio" name="size" value="grands" />grands
+                            </label>
+                        </div>
+
                     </div>
                     <div>
                         <p className='ZoneDetailsLabel'>Nature des dechets</p>
-                        <input className='ZoneDetailsInput' type="text" value="0" name="gender" />
+                        <div
+                            style={{
+                                display: "flex",
+                                backgroundColor: "white",
+                                marginTop: "10px",
+                                justifyContent: "center"
+                            }}>
+                            <div className="form-group">
+                                <label
+                                    htmlFor="password">Type 1</label>
+                                <select
+                                    name="type1"
+                                    style={{
+                                        borderRadius: "25px",
+                                        backgroundColor: "white",
+                                        marginTop: "10px",
+                                    }}
+                                    onChange={this.handleInputChange}>
+                                    <option value="papier">Papier</option>
+                                    <option value="carton">Carton</option>
+                                    <option value="plastique">Plastique</option>
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label
+                                    htmlFor="password">Type 2</label>
+                                <select
+                                    name="type2"
+                                    style={{
+                                        borderRadius: "25px",
+                                        backgroundColor: "white",
+                                        marginTop: "10px"
+                                    }}
+                                    onChange={this.handleInputChange}>
+                                    <option value="papier">Papier</option>
+                                    <option value="carton">Carton</option>
+                                    <option value="plastique">Plastique</option>
+                                </select>
+                            </div>
+                            <div className="form-group">
+                                <label
+                                    htmlFor="password">Type 3</label>
+                                <select
+                                    name="type3"
+                                    style={{
+                                        borderRadius: "25px",
+                                        backgroundColor: "white",
+                                        marginTop: "10px"
+                                    }}
+                                    onChange={this.handleInputChange}>
+                                    <option value="papier">Papier</option>
+                                    <option value="carton">Carton</option>
+                                    <option value="plastique">Plastique</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <p className='ZoneDetailsLabel'>Besoin de gants ?</p>
@@ -81,12 +189,14 @@ class ZoneDetails extends Component {
                             marginLeft: "15%",
                             justifyContent: "space-evenly"
 
-                        }}>
+                        }}
+                            onChange={this.handleInputChange}
+                        >
                             <label>
-                                <input className='ZoneDetailsLabelInput' type="radio" value="option1" checked={true} />oui
+                                <input className='ZoneDetailsLabelInput' type="radio" name="glove" value="yes" />oui
                             </label>
                             <label>
-                                <input className='ZoneDetailsLabelInput' type="radio" value="option1" />non
+                                <input className='ZoneDetailsLabelInput' type="radio" name="glove" value="no" />non
                             </label>
                         </div>
                     </div>
@@ -98,12 +208,13 @@ class ZoneDetails extends Component {
                             marginLeft: "15%",
                             justifyContent: "space-evenly"
 
-                        }}>
+                        }}
+                            onChange={this.handleInputChange}>
                             <label>
-                                <input className='ZoneDetailsLabelInput' type="radio" value="option1" checked={true} />oui
+                                <input className='ZoneDetailsLabelInput' type="radio" name="bag" value="yes" />oui
                             </label>
                             <label>
-                                <input className='ZoneDetailsLabelInput' type="radio" value="option1" />non
+                                <input className='ZoneDetailsLabelInput' type="radio" name="bag" value="no" />non
                             </label>
                         </div>
                     </div>
@@ -114,7 +225,16 @@ class ZoneDetails extends Component {
                         state: {
                             lat: this.state.lat,
                             lng: this.state.lng,
-                            file: this.state.file
+                            file: this.state.file,
+                            filetest: this.state.filetest,
+                            filenametest: this.state.filenametest,
+                            difficulty: this.state.difficulty,
+                            size: this.state.size,
+                            type1: this.state.type1,
+                            type2: this.state.type2,
+                            type3: this.state.type3,
+                            glove: this.state.glove,
+                            bag: this.state.bag
                         }
                     }}
                 >

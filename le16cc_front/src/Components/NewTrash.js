@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, InfoWindow, Marker, GoogleApiWrapper, Polygon } from 'google-maps-react';
+import { Map, InfoWindow, Marker, GoogleApiWrapper, MapProps } from 'google-maps-react';
 import { useLocation, Link } from "react-router-dom";
 import { geolocated } from "react-geolocated";
 import Geocode from "react-geocode";
@@ -13,31 +13,29 @@ const testData = [
     { bgcolor: "#6a1b9a", completed: 0, step: 1 },
 ];
 
-class NewZone extends Component {
+class NewTrash extends Component {
     constructor(props) {
         super(props);
         this.state = {
             markers: {
                 title: "Vous etes ici",
                 name: "SOMA",
-                position: { lat: 48.86071578727745, lng: 2.262813329695943 }
+                position: { lat: 48.8639907837, lng: 2.27723288536 }
             },
             center: {
-                lat: 48.86071578727745,
-                lng: 2.262813329695943
+                lat: 48.8639907837,
+                lng: 2.27723288536
             },
             navlat: 0,
             navlng: 0,
             lat: 0,
             lng: 0,
-            celat: 48.86071578727745,
-            celng: 2.262813329695943,
+            celat: 48.8639907837,
+            celng: 2.27723288536,
             nrue: "",
             rue: "",
             ville: "",
-            cp: "",
-            cpvalue: '',
-            msgcolor: 'red'
+            cp: ""
         };
         this.handleAdressChange = this.handleAdressChange.bind(this);
     }
@@ -108,12 +106,6 @@ class NewZone extends Component {
                     celng: response.results[0].geometry.location.lng,
                     markers: { position: { lat: response.results[0].geometry.location.lat, lng: response.results[0].geometry.location.lng } }
                 })
-                if (cp === "75016" || cp === "75116" ){
-                    this.setState({msgcolor: "green"})
-                }
-                else {
-                    this.setState({msgcolor: "red"})
-                }
             },
             (error) => {
                 console.error(error);
@@ -179,12 +171,6 @@ class NewZone extends Component {
                     ville: response.results[0].address_components[2].long_name,
                     cp: response.results[0].address_components[6].long_name,
                 })
-                if (response.results[0].address_components[6].long_name === "75016" || response.results[0].address_components[6].long_name === "75116" ){
-                    this.setState({msgcolor: "green"})
-                }
-                else {
-                    this.setState({msgcolor: "red"})
-                }
             },
             (error) => {
                 console.error(error);
@@ -214,56 +200,11 @@ class NewZone extends Component {
 
 
     render() {
-        const triangleCoords = [
-            { lat: 48.880387998705885, lng: 2.25846899980789 },
-            { lat: 48.87796973818341, lng: 2.2774924562358754 },
-            { lat: 48.878621457010986, lng: 2.27988341138076 },
-            { lat: 48.87363611733889, lng: 2.2951269124457276 },
-            { lat: 48.873328555931764, lng: 2.295468470845096 },
-            { lat: 48.87251022301, lng: 2.2961967684335858 },
-            { lat: 48.872323141193185, lng: 2.2963597252038013 },
-            { lat: 48.87092125527352, lng: 2.29753030610338 },
-            { lat: 48.869677125702495, lng: 2.298238723902579 },
-            { lat: 48.86855351513266, lng: 2.2989290168173504 },
-            { lat: 48.867441206880976, lng: 2.2992005310333856 },
-            { lat: 48.864985344440086, lng: 2.2999458223045144 },
-            { lat: 48.86453277369524, lng: 2.3016610862741915 },
-            { lat: 48.86423265844495, lng: 2.3015560584670705 },
-            { lat: 48.86323049319275, lng: 2.2963817860733564 },
-            { lat: 48.8625359375569, lng: 2.293967601604443 },
-            { lat: 48.85660565559522, lng: 2.286664913098737 },
-            { lat: 48.84948603484691, lng: 2.2770835716859295 },
-            { lat: 48.83407270001898, lng: 2.2619056754085736 },
-            { lat: 48.834838689340565, lng: 2.2551926104264544 },
-            { lat: 48.83885292932251, lng: 2.251728223548639 },
-            { lat: 48.842534345828184, lng: 2.2512951752026575 },
-            { lat: 48.84291434760853, lng: 2.251150825753997 },
-            { lat: 48.845408037746644, lng: 2.2524499707919414 },
-            { lat: 48.84557427936224, lng: 2.250573427932384 },
-            { lat: 48.84759288332908, lng: 2.242417683982789 },
-            { lat: 48.84977763356626, lng: 2.2398193938308264 },
-            { lat: 48.8501494030508, lng: 2.23870140547865 },
-            { lat: 48.85283269581938, lng: 2.2262512655316846 },
-            { lat: 48.8535925402098, lng: 2.2241581985261076 },
-            { lat: 48.856441853997445, lng: 2.2244829847835184 },
-            { lat: 48.86536865378795, lng: 2.228380419929165 },
-            { lat: 48.86909559627586, lng: 2.231808719334851 },
-            { lat: 48.86916680903471, lng: 2.231808719334851 },
-            { lat: 48.87099456857781, lng: 2.237185736372144 },
-            { lat: 48.87203897257752, lng: 2.2405418610535 },
-            { lat: 48.873676744039564, lng: 2.2431040637672237 },
-            { lat: 48.8764062441487, lng: 2.2457745287106015 }
-        ];
         console.log('center', this.state.center.lat, this.state.center.lng)
         console.log(this.state.markers.position.lat)
-        var disableButton = true;
-        if (this.state.cp == '75016' || this.state.cp == '75116') {
-            disableButton = false;
-        }
-
         return (
             <div>
-                <p>J'AJOUTE UNE ZONE A NETTOYER</p>
+                <p>J'AJOUTE UN POINT DE COLLECTE</p>
                 <div style={{
                     width: "40%",
                     marginLeft: "30%"
@@ -306,7 +247,7 @@ class NewZone extends Component {
                                     lat: this.state.celat,
                                     lng: this.state.celng
                                 }}
-                                zoom={13}
+                                zoom={15}
                                 yesIWantToUseGoogleMapApiInternals="true"
                             >
                                 <Marker
@@ -316,13 +257,6 @@ class NewZone extends Component {
                                     position={this.state.markers.position}
                                     onDragend={(t, map, coord) => this.onMarkerDragEnd(coord)}
                                 />
-                                <Polygon
-                                    paths={triangleCoords}
-                                    strokeColor="#74DB84"
-                                    strokeOpacity={0.8}
-                                    strokeWeight={2}
-                                    fillColor="lightblue"
-                                    fillOpacity={0.35} />
                             </Map>
                         </div>
                         <div className="gpsbox">
@@ -408,14 +342,14 @@ class NewZone extends Component {
                             </div>
                             <Link
                                 to={{
-                                    pathname: '/NewZoneImg',
+                                    pathname: '/detailPointdeCollecte',
                                     state: {
                                         lat: this.state.lat,
                                         lng: this.state.lng
                                     }
                                 }}
                             >
-                                <button disabled={disableButton}>Next</button>
+                                <button>Next</button>
                             </Link>
                         </div>
                     </div>
@@ -427,7 +361,7 @@ class NewZone extends Component {
 
 export default GoogleApiWrapper({
     apiKey: ("AIzaSyD7ZmbMrmVkR19h8d5MfZQseosUypXDTZw")
-})(NewZone);
+})(NewTrash);
 
 /*<input type="button" value="New marker" onClick={(e) => this.NewMarker()}
 
