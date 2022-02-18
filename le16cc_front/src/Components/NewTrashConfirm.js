@@ -88,7 +88,7 @@ class NewTrashConfirm extends Component {
                 ashtray: this.state.ashtray
             }),
         };
-        fetch('http://localhost:8080/v1/new-trashmarker', requestOptions)
+        fetch('https://api.le16cc.fr/v1/new-trashmarker', requestOptions)
             .then(console.log('body: ', requestOptions))
             .then(response => response.json())
             .then(data => {
@@ -106,7 +106,7 @@ class NewTrashConfirm extends Component {
         formData.append('image', file)
         formData.append('id', id)
 
-        fetch('http://localhost:8080/v1/imagestest', {
+        fetch('https://api.le16cc.fr/v1/imagestest', {
             method: 'POST',
             body: formData,
             headers: {

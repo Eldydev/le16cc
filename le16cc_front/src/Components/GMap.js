@@ -90,7 +90,7 @@ class SimpleMap extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8080/v1/markers')
+    fetch('https://api.le16cc.fr/v1/markers')
       .then(res => res.json())
       .catch(error => console.error('Error: ', error))
       .then(response => {
@@ -159,12 +159,12 @@ class SimpleMap extends Component {
         id: id
       })
     };
-    fetch('http://localhost:8080/v1/MarkerImages', requestOptions)
+    fetch('https://api.le16cc.fr/v1/MarkerImages', requestOptions)
       .then(console.log('body: ', requestOptions))
       .then(response => response.json())
       .then(data => {
         console.log('markerimage :', data)
-        this.setState({ activeMarkerImg: 'http://localhost:8080/' + data.rows[0].url })
+        this.setState({ activeMarkerImg: 'https://api.le16cc.fr/' + data.rows[0].url })
       })
   }
 
@@ -176,7 +176,7 @@ class SimpleMap extends Component {
         id: id
       })
     };
-    fetch('http://localhost:8080/v1/MarkerDetails', requestOptions)
+    fetch('https://api.le16cc.fr/v1/MarkerDetails', requestOptions)
       .then(console.log('body: ', requestOptions))
       .then(response => response.json())
       .then(data => {
@@ -193,7 +193,7 @@ class SimpleMap extends Component {
         id: id
       })
     };
-    fetch('http://localhost:8080/v1/UserId', requestOptions)
+    fetch('https://api.le16cc.fr/v1/UserId', requestOptions)
       .then(console.log('body: ', requestOptions))
       .then(response => response.json())
       .then(data => {

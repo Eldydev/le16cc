@@ -66,7 +66,7 @@ class NewZoneConfirm extends Component {
                 filenametest: this.state.filenametest
             }),
         };
-        fetch('http://localhost:8080/v1/new-marker', requestOptions)
+        fetch('https://api.le16cc.fr/v1/new-marker', requestOptions)
             .then(console.log('body: ', requestOptions))
             .then(response => response.json())
             .then(data => {
@@ -85,7 +85,7 @@ class NewZoneConfirm extends Component {
         formData.append('image', file)
         formData.append('id', id)
 
-        fetch('http://localhost:8080/v1/imagestest', {
+        fetch('https://api.le16cc.fr/v1/imagestest', {
             method: 'POST',
             body: formData,
             headers: {

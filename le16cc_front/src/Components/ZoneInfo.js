@@ -32,12 +32,12 @@ class ZoneInfos extends Component {
                 id: id
             })
         };
-        fetch('http://localhost:8080/v1/MarkerImages', requestOptions)
+        fetch('https://api.le16cc.fr/v1/MarkerImages', requestOptions)
             .then(console.log('body: ', requestOptions))
             .then(response => response.json())
             .then(data => {
                 console.log('markerimage :', data)
-                this.setState({ MarkerImg: 'http://localhost:8080/' + data.rows[0].url})
+                this.setState({ MarkerImg: 'https://api.le16cc.fr/' + data.rows[0].url})
             })
     }
 
@@ -49,7 +49,7 @@ class ZoneInfos extends Component {
                 id: id
             })
         };
-        fetch('http://localhost:8080/v1/MarkerDetails', requestOptions)
+        fetch('https://api.le16cc.fr/v1/MarkerDetails', requestOptions)
             .then(console.log('body: ', requestOptions))
             .then(response => response.json())
             .then(data => {
@@ -66,7 +66,7 @@ class ZoneInfos extends Component {
                 id: id
             })
         };
-        fetch('http://localhost:8080/v1/UserId', requestOptions)
+        fetch('https://api.le16cc.fr/v1/UserId', requestOptions)
             .then(console.log('body: ', requestOptions))
             .then(response => response.json())
             .then(data => {
