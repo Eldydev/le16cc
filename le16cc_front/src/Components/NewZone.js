@@ -292,14 +292,14 @@ class NewZone extends Component {
                                 marginLeft: "10%",
                                 height: "30px",
                                 borderRadius: "25px",
-                                backgroundColor: "white",
                                 textAlign: "center",
                                 paddingTop: "10px",
-                                backgroundImage: "linear-gradient(to top, rgba(116,219,132,0.3), #74DB84)",
-                                color: "black"
+                                //backgroundImage: "linear-gradient(to top, rgba(116,219,132,0.3), #74DB84)",
+                                //color: "black",
+                                cursor: 'pointer'
                             }}
                         >Utiliser ma localisation actuelle</p>
-                        <div style={{ height: '400px', width: '100%', position: "relative" }}>
+                        <div style={{ height: '400px', width: '100%', position: "relative", }}>
                             <Map
                                 google={this.props.google}
                                 center={{

@@ -13,7 +13,7 @@ import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import AuthService from "./services/auth.service";
-
+import SwitchButton from './Components/SwitchButton';
 
 class Home extends Component {
   constructor(props) {
@@ -30,6 +30,7 @@ class Home extends Component {
         <SimpleMap />
         <NZButton />
         <NTButton />
+        <SwitchButton />
         <div
           id = "greyscreen"
           style={{

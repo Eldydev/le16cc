@@ -19,14 +19,18 @@ class NTButton extends Component {
     }
 
     Redirect() {
-        if (this.state.logged === true) {
-            console.log("rediect clicked")
-            window.location.href = "/AjouterUnPointdeCollecte"
+        var NTB = document.getElementById('NTB')
+        if (NTB.classList.contains('active')) {
+            if (this.state.logged === true) {
+                console.log("rediect clicked")
+                window.location.href = "/AjouterUnPointdeCollecte"
+            }
+            else {
+                document.getElementById('greyscreen2').style.display = "block"
+                document.getElementById('LoginPopup').style.display = "block"
+            }
         }
-        else {
-            document.getElementById('greyscreen2').style.display = "block"
-            document.getElementById('LoginPopup').style.display = "block"
-        }
+
 
     }
 
@@ -34,7 +38,7 @@ class NTButton extends Component {
     render() {
         return (
             <div>
-                <p id="NTB" onClick={(e) => this.Redirect()}> + AJOUTER UN POINT DE COLLECTE</p>
+                <p id="NTB" className='Switched active' onClick={(e) => this.Redirect()}> + AJOUTER UN POINT DE COLLECTE</p>
             </div>
         );
     }

@@ -230,7 +230,8 @@ export default class Register extends Component {
                     style={{
                       borderRadius: "25px",
                       backgroundColor: "white",
-                      marginTop: "10px"
+                      marginTop: "10px",
+                      cursor: 'pointer'
                     }}
                     onChange={this.onChangeQuartier}>
                     <option value="Auteuil-Nord">Auteuil - Nord</option>

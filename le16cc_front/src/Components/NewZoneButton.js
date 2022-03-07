@@ -11,25 +11,46 @@ class NZButton extends Component {
     constructor() {
         super();
         this.state = {
-            logged: false
+            logged: false,
+            with: 0,
+            height: 0
         };
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
     componentDidMount() {
         if (isLogin()) {
             this.setState({ logged: true })
         }
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
+        console.log(':o')
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
+        if (window.innerWidth <= 599) {
+            document.getElementById('NZB').classList.remove('active')
+        }
     }
 
     Redirect() {
-        if (this.state.logged === true) {
-            console.log("rediect clicked")
-            window.location.href = "/Newzone"
+        var NZB = document.getElementById('NZB')
+        if (NZB.classList.contains('active')) {
+            if (this.state.logged === true) {
+                console.log("rediect clicked")
+                window.location.href = "/Newzone"
+            }
+            else {
+                document.getElementById('greyscreen2').style.display = "block"
+                document.getElementById('LoginPopup').style.display = "block"
+            }
         }
-        else {
-            document.getElementById('greyscreen2').style.display = "block"
-            document.getElementById('LoginPopup').style.display = "block"
-        }
+
 
     }
 
@@ -37,7 +58,7 @@ class NZButton extends Component {
     render() {
         return (
             <div>
-                <p id="NZB" onClick={(e) => this.Redirect()}> + AJOUTER UNE ZONE A NETTOYER</p>
+                <p id="NZB" className='active' onClick={(e) => this.Redirect()}> + AJOUTER UNE ZONE A NETTOYER</p>
             </div>
         );
     }

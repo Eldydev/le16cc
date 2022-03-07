@@ -1,24 +1,25 @@
 img {
-    width: 212px;
-    height: 195px;
+    width: 120px;
+    height: 110px;
 }
 
 #Glovelogo {
-    width: 233px;
-    height: 228px;
+    width: 150px;
+    height: 150px;
 
 }
 
 #LogoZone {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 #SigninButton {
     margin-left: 25%;
+    margin-right: 25%;
     margin-top: 35px;
-    width: 400px;
+    width: 50%;
     padding-top: 1px;
     padding-bottom: 1px;
     background-color: lightgreen;
@@ -26,32 +27,35 @@ img {
 }
 
 #SigninButton p {
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #title {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
 }
 
 #titledesc {
-    font-size: 35px;
+    font-size: 30px;
     margin-left: 35px;
     margin-right: 35px;
 }
 
 #loginpopupbox {
-    width: 750px;
+    width: 30%;
     border: solid 2px black;
     border-radius: 15px;
-    margin-left: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
     background-color: aliceblue;
 }
 
 #LoginLink {
-    font-size: 25px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 #LoginLinkTrue {
@@ -60,11 +64,30 @@ img {
 }
 
 #LoginPopup {
-    margin-left: 18%;
+    width: 100%;
 }
 
 #LoginPopupCross {
-    left: 125%;
+    left: 63%;
     top: 1%;
     cursor: pointer;
+}
+
+@media all and (min-width: 300px) and (max-width: 599px) {
+    
+    #LoginPopupCross {
+        left: 89%;
+        top: 1%;
+        cursor: pointer;
+    }
+
+    #loginpopupbox {
+        width: auto;
+        border: solid 2px black;
+        border-radius: 15px;
+        margin-left: 5%;
+        margin-right: 5%;
+        background-color: aliceblue;
+    }
+    
 }

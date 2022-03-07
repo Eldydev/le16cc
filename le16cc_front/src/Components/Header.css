@@ -25,13 +25,13 @@
     /*background-color: #74DB84;*/
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+    background-image: linear-gradient(to top, rgba(116,219,132,0.7), #74DB84);
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 94%;
+    width: auto;
     margin-top: 10px;
-    margin-left: 3%;
+    margin-left: 11%;
     margin-right: 3%;
     border-radius: 50px;
 }
@@ -91,10 +91,10 @@
   @media screen and (min-width: 1025px) and (max-width: 1280px) {
 
     #HeaderDiv {
-        justify-content: space-between;    
-        margin-left: 5%;
+        justify-content: space-evenly;    
+        margin-left: 15%;
         margin-right: 5%;
-        width: 90%;
+        width: auto;
     }
     #LogoDiv {
         margin-right: 1%;
@@ -102,7 +102,7 @@
     .HeaderLink {
         margin-left: 10px;
         margin-right: 10px;
-        font-size: 15px;
+        font-size: 13px;
     }
     #HeaderTitle {
         font-size: 22px;
@@ -126,6 +126,37 @@
         display: flex;
     }
 
+  }
+
+  @media screen and (min-width: 415px) and (max-width: 599px) {
+
+    #HeaderLinkDiv {
+        display: none;
+    }
+    #HeaderDiv {
+        justify-content: space-between;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+        position: absolute;
+        top: 5%;
+    }
+    #HeaderMDiv {
+        display: flex;
+    }
+    #logo {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 15%;
+    }
+    #HeaderTitle {
+        font-size: 20px;
+    }
+    #Mlogo {
+        width: 50px;
+        height: 50px;
+
+    }
   }
 
   @media screen and (max-width: 414px) {

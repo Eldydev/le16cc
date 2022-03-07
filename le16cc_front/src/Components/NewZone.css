@@ -39,9 +39,15 @@ input {
     width: 100%;
     border-radius: 25px;
 }
+#geolocbutton{
+    color: black;
+    background-image: linear-gradient(to top, rgba(116,219,132,0.3), #74DB84);
+}
 
 #geolocbutton:hover{
-    color: green;
+    background-image: unset ;
+    background-color: rgba(116,219,132);
+    color: white;
 }
 
 #numberstreetbox {
