@@ -39,7 +39,7 @@
     display: none;
 }
 
-@media all and (min-width: 300px) and (max-width: 599px) {
+@media all and (min-width: 400px) and (max-width: 599px) {
 
     #NZB {
         padding: 5px;
@@ -101,4 +101,76 @@
         transform: rotate(180deg);
         transition: all 0.5s ease-out;
     }*/
+}
+
+@media all and (min-width: 300px) and (max-width: 399px) {
+
+    #NZB {
+        padding: 5px;
+        width: 150px;
+        left: 17%;
+        top: 90%;
+        font-size: 6px;
+        transition: all 0.5s ease-out;
+        cursor: not-allowed;
+    }
+
+    #NTB {
+        padding: 5px;
+        width: 150px;
+        left: 17%;
+        top: 90%;
+        font-size: 6px;
+        transition: all 0.5s ease-out;
+        cursor: not-allowed;
+    }
+
+    #NTB.Switched {
+        width: 75%;
+        color: white;
+        top: 80%;
+        font-size: 15px;
+        left: 5%;
+        background-image: linear-gradient(to top, rgba(116, 219, 132, 0.7), #74DB84);
+        border: solid 1px white;
+        transition: all 0.5s ease-out;
+        cursor: pointer;
+    }
+
+    #NZB.Switched {
+        width: 75%;
+        color: white;
+        top: 80%;
+        font-size: 15px;
+        left: 5%;
+        background-image: linear-gradient(to top, rgba(116, 219, 132, 0.7), #74DB84);
+        border: solid 1px white;
+        transition: all 0.5s ease-out;
+        cursor: pointer;
+    }
+
+    #SwitchButton {
+        display: block;
+        top: 90%;
+        right: 80px;
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        z-index: 1000;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+    }
+
+    /*#SwitchButton.rotated {
+        transform: rotate(180deg);
+        transition: all 0.5s ease-out;
+    }*/
+}
+
+@media screen and (max-width: 1024px) {
+   
+    #NTB {
+        right: 7%;
+      }
+
 }

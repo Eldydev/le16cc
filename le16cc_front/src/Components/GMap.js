@@ -6,6 +6,10 @@ import Pin from '../IMG/Pin.png'
 import addImage from '../IMG/addImage.png'
 import './GMap.css'
 import { marker } from 'leaflet';
+import trashsolidresized from '../IMG/trashsolidresized.png';
+import trashratresized from '../IMG/trashratresized.png';
+import trashresized from '../IMG/trashresized.png';
+import trashglassresized from '../IMG/trashglassresized.png';
 
 
 
@@ -73,6 +77,15 @@ class SimpleMap extends Component {
           id: 0
         }
       ],
+      trash: [
+        {
+          title: "The marker`s title will appear as a tooltip.",
+          name: "SOMA",
+          position: { lat: 37.778519, lng: -122.40564 },
+          id: 0,
+          img: ""
+        }
+      ],
       showingInfoWindow: false,
       activeMarker: {},
       activeMarkerImg: {},
@@ -112,6 +125,29 @@ class SimpleMap extends Component {
         })
         this.MarkersMaping(response.rows)
       });
+
+    fetch('https://api.le16cc.fr/v1/trash')
+      .then(res => res.json())
+      .catch(error => console.error('Error: ', error))
+      .then(response => {
+        console.log('Success: ', response)
+        console.log(response.rows)
+        var lat = response.rows[0].lat
+        var lng = response.rows[0].lng
+        var id = response.rows[0].id
+        console.log(lat, lng, id)
+        this.setState({
+          trash: [
+            {
+              title: "",
+              name: "",
+              position: { lat, lng },
+              id: id
+            }
+          ]
+        })
+        this.TrashMaping(response.rows)
+      });
   }
 
   MarkersMaping(data) {
@@ -134,6 +170,61 @@ class SimpleMap extends Component {
             ]
           };
         });
+      })
+    )
+  }
+
+  TrashMaping(data) {
+    console.log('data : ', data)
+    return (
+      data.map((data, i) => {
+        var lat = data.lat
+        var lng = data.lng
+        var id = data.id
+        const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            id: id
+          })
+        };
+        fetch('https://api.le16cc.fr/v1/trashDetails', requestOptions)
+          .then(console.log('body: ', requestOptions))
+          .then(response => response.json())
+          .then(data => {
+            console.log('markerdetails :', data.rows[0])
+            var type = data.rows[0].type
+            switch (type) {
+              case "1":
+                var img = trashresized
+                break;
+              case "2":
+                var img = trashsolidresized
+                break;
+              case "3":
+                var img = trashglassresized
+                break;
+              case "4":
+                var img = trashratresized
+                break;
+              default:
+              // code block
+            }
+            this.setState(previousState => {
+              return {
+                trash: [
+                  ...previousState.trash,
+                  {
+                    title: "",
+                    name: i,
+                    position: { lat, lng },
+                    id: id,
+                    img: img
+                  }
+                ]
+              };
+            });
+          })
       })
     )
   }
@@ -254,6 +345,7 @@ class SimpleMap extends Component {
   }
 
   render() {
+    console.log('trash: ', this.state.trash)
 
     const triangleCoords = [
       { lat: 48.880387998705885, lng: 2.25846899980789 },
@@ -327,6 +419,18 @@ class SimpleMap extends Component {
               name={marker.name}
               position={marker.position}
               id={marker.id}
+              onClick={this.onMarkerClick}
+            />
+          ))}
+
+          {this.state.trash.map((trash, index) => (
+            <Marker
+              icon={trash.img}
+              key={index}
+              title={trash.title}
+              name={trash.name}
+              position={trash.position}
+              id={trash.id}
               onClick={this.onMarkerClick}
             />
           ))}
